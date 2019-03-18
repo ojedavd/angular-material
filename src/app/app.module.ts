@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {AppRouters} from './app.routes';
 import {DataService} from './data/data.service';
 import {AuthService} from './auth.service';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,15 +12,18 @@ import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    PostDialogComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRouters,
     FlexLayoutModule,
     AppRoutingModule,
@@ -27,6 +31,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MaterialModule,
   ],
   providers: [DataService, AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PostDialogComponent],
 })
 export class AppModule { }
